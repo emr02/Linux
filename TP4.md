@@ -5,6 +5,7 @@
 <ol>
 <li><h3>Créez un alias “maj” permettant de télécharger la dernière liste des paquets disponibles, puis de mettre à jour les paquets installés. Où faut-il enregistrer cet alias pour qu’il ne soit pas perdu au prochain
 redémarrage ?<h3></li>
+<li><h3>Mettez à jour votre système en utilisant l’alias créé précédemment. Pourquoi cette commande s’exécute sans problème, alors qu’elle est définie dans votre dossier personnel (“home”), et que celui-ci ne figure pas dans le PATH ?<h3></li
 
 *En allant dans le fichier .bashrc, situé dans /home/julien pour le user julien, on remarque le script en bash suivant:*
 
@@ -23,7 +24,7 @@ fi
 ```bash
 alias maj='apt upgrade'
 ```
-*Nous devons par la suite nous décoonecter de la session afin que notre fichier soit pris en compte mais non pas redémarré la machine sinon nous perdons tout :
+*Nous devons par la suite nous déconnecter de la session afin que notre fichier soit pris en compte mais non pas redémarré la machine sinon nous perdons tout :
 Nous avons entré les commandes suivantes :
 `sudo su` puis `maj` et nous avons remarqué que notre alias est bien pris en compte car le système va lancer une recherche de mise à jour*
 
