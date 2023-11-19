@@ -83,7 +83,10 @@ On créer un dossier "script" à l'aide de la commande ```mkdir```.
 Ensuite nous allons ajouter le chemin vers ce dossier dans la variable d'environnement PATH:
 * Entrer dans le fichier ```vim .bashrc```  
 * Ajouter à la fin du fichier ```echo PATH=$PATH:~/script >> ~/.bashrc```  
-* Relire le bashrc à l'aide de la source ```~/.bashrc.```  
+* Relire le bashrc à l'aide de la source ```~/.bashrc.```
+
+Vous pouvez activer le débugage en exécutant votre script à l’aide de la commande ```bash -x nom_script```.
+Vous pouvez également, dans votre script, encadrer les lignes à débuguer par les instructions ```set -x``` et ```set +x```.
 
 
 ## Exercice 2. Contrôle de mot de passe
