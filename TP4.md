@@ -84,3 +84,11 @@ Ci-dessus vont donc être listés tous les paquets utiles pour jouer au sudoku
 <b>N’installez pas le paquet gnome-sudoku ou ksudoku sous peine de devoir probablement réinstallervotre VM</b>
 
 </ol>
+
+<h1>Exercice 2</h1>
+
+<ol>
+ 
+<li><h3>A l’aide des commandes which -a et dpkg, identifiez de quel paquet provient la commande ls ? Comment obtenir cette information en une seule commande, pour n’importe quel programme ? Utilisez la réponse à cette question pour écrire un script appelé origine-commande (sans l’extension .sh) prenant en argument le nom d’une commande, et indiquant quel paquet l’a installée.<h3></li>
+
+</ol>
