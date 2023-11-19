@@ -1,4 +1,4 @@
- # TP 4 Utilisateurs, groupes et permissions antoine chavée
+ # TP 3 - Utilisateurs, groupes et permissions
 
 <h1>Exercice 1. Gestion des utilisateurs et des groupes</h1>
 
