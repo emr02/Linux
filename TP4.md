@@ -9,10 +9,11 @@ redémarrage ?<h3></li>
 *En allant dans le fichier .bashrc, situé dans /home/julien pour le user julien, on remarque le script en bash suivant:*
 
 ```bash
-Alias definitions.
-You may want to put all your additions into a separate file like
-~/.bash_aliases, instead of adding them here directly.
-See /usr/share/doc/bash-doc/examples in the bash-doc package.
+#Alias definitions.
+#You may want to put all your additions into a separate file like
+#~/.bash_aliases, instead of adding them here directly.
+#See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi
