@@ -184,8 +184,8 @@ nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
 Quelle commande permet de forcer sudo à oublier votre mot de passe ?
  minutes par défaut.</h3></li>
  
-Selon le manuel de la commande sudo, celle-ci conserve le mot de passe en mémoire pendant 15
-for 15 minutes. Cela peux être réinitialiser avec la commande:
+*Selon le manuel de la commande sudo, celle-ci conserve le mot de passe en mémoire pendant 15
+for 15 minutes. Cela peux être réinitialiser avec la commande:*
 
 >` serveur@serveur:~$ sudo -K `
 
