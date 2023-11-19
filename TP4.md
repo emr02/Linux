@@ -23,6 +23,9 @@ fi
 ```bash
 alias maj='apt upgrade'
 ```
+*Nous devons par la suite nous décoonecter de la session afin que notre fichier soit pris en compte mais non pas redémarré la machine sinon nous perdons tout :
+Nous avons entré les commandes suivantes :
+`sudo su` puis `maj` et nous avons remarqué que notre alias est bien pris en compte car le système va lancer une recherche de mise à jour*
 
 <li><h3>Créez ensuite 4 utilisateurs u1, u2, u3, u4 avec la commande useradd, en demandant la création de
 leur dossier personnel et avec bash pour shell
