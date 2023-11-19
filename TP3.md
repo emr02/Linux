@@ -11,8 +11,8 @@
 
 *ajout groupe*
 
- >`sudo addgroup ics`
- >`sudo groupadd ics`
+ >`sudo addgroup dev`
+ >`sudo groupadd infra`
 
 <li><h3>Créez ensuite 4 utilisateurs u1, u2, u3, u4 avec la commande useradd, en demandant la création de
 leur dossier personnel et avec bash pour shell
