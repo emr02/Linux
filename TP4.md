@@ -32,11 +32,13 @@ Nous avons entré les commandes suivantes :
 
 <li><h3>Utilisez les commandes dpkg et apt pour compter de deux manières différentes le nombre de total de paquets installés sur la machine (ne pas hésiter à consulter le manuel !). Comment explique-t-on la (petite) différence de comptage ? Pourquoi ne peut-on pas utiliser directement le fichier dpkg.log ?</h3></li>
 
+<li><h3>Utilisez le fichier /var/log/dpkg.log pour obtenir les 5 derniers paquets installés sur votre machine.</h3></li>
+
 <li><h3>Listez les derniers paquets qui ont été installés explicitement avec la commande apt install</h3></li>
 
 <li><h3>A quoi servent les paquets glances, tldr et hollywood ? Installez-les et testez-les.</h3></li>
 
-<li><h3>Quels paquets proposent de jouer au sudoku ?</h3></li>
+<b>Quels paquets proposent de jouer au sudoku ?</b>
 
 <li>N’installez pas le paquet gnome-sudoku ou ksudoku sous peine de devoir probablement réinstallervotre VM</li>
 
