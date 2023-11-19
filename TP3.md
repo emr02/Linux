@@ -376,7 +376,7 @@ pour voire les droit
 ll
 </code>
 
-<li><h3>Définissez un umask très permissif qui autorise tout le monde à lire vos fichiers et traverser vos répertoires, mais n’autorise que vous à écrire. Testez sur un nouveau fichier et un nouveau répertoire.</h3><li>
+<li><h3>Définissez un umask très permissif qui autorise tout le monde à lire vos fichiers et traverser vos répertoires, mais n’autorise que vous à écrire. Testez sur un nouveau fichier et un nouveau répertoire.</h3></li>
 
 *definition d'un nouveau umask*
 
