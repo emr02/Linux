@@ -8,13 +8,15 @@ redémarrage ?<h3></li>
 
 *En allant dans le fichier .bashrc, situé dans /home/julien pour le user julien, on remarque le script en bash suivant:*
 
- >`Alias definitions.
+```bash
+Alias definitions.
 You may want to put all your additions into a separate file like
 ~/.bash_aliases, instead of adding them here directly.
 See /usr/share/doc/bash-doc/examples in the bash-doc package.
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
-fi`
+fi
+```
 
 
 <li><h3>Créez ensuite 4 utilisateurs u1, u2, u3, u4 avec la commande useradd, en demandant la création de
