@@ -91,4 +91,50 @@ Ci-dessus vont donc être listés tous les paquets utiles pour jouer au sudoku
  
 <li><h3>A l’aide des commandes which -a et dpkg, identifiez de quel paquet provient la commande ls ? Comment obtenir cette information en une seule commande, pour n’importe quel programme ? Utilisez la réponse à cette question pour écrire un script appelé origine-commande (sans l’extension .sh) prenant en argument le nom d’une commande, et indiquant quel paquet l’a installée.<h3></li>
 
+*La commande ls est installée à partir du paquet suivant :*
+```bash
+which -a ls | tail -n 1 | xargs dpkg -S
+coreutils: /bin/ls
+```
+
+*script origine-commande*
+
+```bash
+if [ -z "$1" ]; then
+echo "bad argument, donnez un nom de commande ."
+else
+which -a "$1" | tail -n 1 | xargs dpkg -S
+fi
+```
+*test du script et il fonctionne !*
+
+```bash
+./origine-commande mkdir
+coreutils: /bin/mkdir
+```
+</ol>
+
+<h1>Exercice 3</h1>
+
+<ol>
+ 
+<li><h3>Ecrire une commande qui affiche “INSTALLÉ” ou “NON INSTALLÉ” selon le nom et le statut du package spécifié dans cette commande.<h3></li>
+ 
+```bash
+(dpkg -l "fortunes" | grep "^i") && echo "installé" || echo "non installé"
+```
+*Résultat de la commande :*
+
+```bash
+ii fortunes 1:1.99.1-7build1 all Data files containing fortune cookies installé
+```
+
+*Autre exemple avec le paquet openssh-server :*
+```bash
+(dpkg -l "openssh-server" | grep "^i") && echo "installé" || echo "non installé"
+
+ii openssh-server 1:8.0p1-6build1 amd64 secure shell (SSH) server, for secure access
+from remote machines installé
+
+```
 </ol>
