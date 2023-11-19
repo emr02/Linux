@@ -179,6 +179,17 @@ nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
 </code>
 
 *Nobody est un utilisateur qui n'a aucun droit sous linux, les droits minimun. Il a donc que les droits défini dans other des fichiers.*
+
+ * Par défaut, combien de temps la commande sudo conserve-t-elle votre mot de passe en mémoire ?
+Quelle commande permet de forcer sudo à oublier votre mot de passe ?
+ minutes par défaut.
+ 
+Selon le manuel de la commande sudo, celle-ci conserve le mot de passe en mémoire pendant 15
+for 15 minutes. Cela peux être réinitialiser avec la commande:
+
+```
+serveur@serveur:~$ sudo -K
+```
 </ol>
 
 <h1>Exercice 2. Gestion des permissions</h1>
