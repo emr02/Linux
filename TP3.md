@@ -404,6 +404,13 @@ ll
   - chmod 653 fic en sachant que les droits initiaux de fic sont 711 `Hein ?`
   - chmod u+x,g=w,o-r fic en sachant que les droits initiaux de fic sont r--r-x--- `520`
  </code>
+
+<li><h3>Affichez les droits sur le programme passwd. Que remarquez-vous ? En affichant les droits du fichier /etc/passwd, pouvez-vous justifier les permissions sur le programme passwd ?</h3></li>
+
+<code>
+ serveur@serveur:~/folder$ ll /etc/passwd
+-rw-r--r-- 1 root root 1801 sept. 30 15:08 /etc/passwd
+ </code>
  
 </ol>
 
