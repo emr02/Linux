@@ -154,27 +154,104 @@ La commande `"[" `est la commande de test. Elle permet d'écrire des conditions 
 
 </ol>
 
-<h1>Exercice 5</h1>
+<h1>Exercice 5 - aptitude</h1>
 
 <ol>
  
 <li><h3>Installez les paquets emacs et lynx à l’aide de la version graphique d’aptitude (et prenez deux minutes pour vous renseigner et tester ces paquets).<h3></li>
  
-*Pour installer le paquet `emacs`, via `aptitude`, il faut d'abord installer le paquet aptitude en luimême puis une fois sur aptitude on fait une recherche en tapant :` /emacs` puis il faut appuyer sur n pour passer aux autres pages afin de trouver le paquet nommé emacs seul, puis appuyer sur +
+*Pour installer le paquet `emacs`, via `aptitude`, il faut d'abord installer le paquet aptitude en luimême puis une fois sur aptitude on fait une recherche en tapant :`/emacs` puis il faut appuyer sur n pour passer aux autres pages afin de trouver le paquet nommé emacs seul, puis appuyer sur +
 pour accepter d'installer le paquet, puis appuyer deux fois sur g pour confirmer et lancer
 l'installation. Ensuite si l'on tape emacs puis entrer nous avons bien accès au programme emacs sur notre machine*
 
 </ol>
 
-<h1>Exercice 6</h1>
+<h1>Exercice 6. Installation d’un paquet par PPA</h1>
+
+<ol>
+ 
+<li><h3>Certains logiciels ne figurent pas dans les dépôts officiels. C’est le cas par exemple de la version ”officielle” de Java depuis qu’elle est développée par Oracle. Dans ces cas, on peut parfois se tourner vers un ”dépôt personnel” ou PPA.<h3></li>
+
+ *1. Installer la version Oracle de Java (avec l’ajout des PPA)*
+ 
+```bash
+sudo add-apt-repository ppa:linuxuprising/java
+sudo apt update
+sudo apt install oracle-java21-installer
+```
+
+*2. Vérifiez qu’un nouveau fichier a été créé dans /etc/apt/sources.list.d. Que contient-il ?*
+
+*Nous remarquons bien que un nouveau fichier a été créé*
+ 
+```bash
+[11:23]-[root]@ubuntu-/etc/apt/sources.list.d: ll
+total 12
+drwxr-xr-x 2 root root 4096 avril 1 11:16 ./
+drwxr-xr-x 7 root root 4096 avril 1 11:16 ../
+-rw-r--r-- 1 root root 136 avril 1 11:16 linuxuprising-ubuntu-java-eoan.list
+```
+
+</ol>
+
+<h1>Exercice 7. Installation d’un logiciel à partir du code source</h1>
+
+<ol>
+ 
+<li><h3>Lorsqu’un logiciel n’est disponible ni dans les dépôts officiels, ni dans un PPA, ou encore parce qu’on souhaite n’installer qu’une partie de ses fonctionnalités, on peut se tourner vers la compilation du code source. C’est ce que nous allons faire ici, avec le programme cbonsai (https://gitlab.com/jallbrit/cbonsai)<h3></li>
+
+ *1. Commencez par cloner le dépôt git suivant :*
+ 
+```bash
+git clone https://gitlab.com/jallbrit/cbonsai
+```
+*Ceci permet de récupérer en local le code source du logiciel cbonsai.*
+
+*2. Rendez vous dans le dossier cbonsai. Un fichier README.md) est livré avec les sources, et vous explique
+comment compiler le programme (vous pouvez installer un lecteur de Markdown pour Bash, comme
+mdless pour vous faciliter la lecture de ce type de fichiers).*
+
+*Un fichier Makefile est également présent. Un Makefile est un fichier utilisé par l’outil make, et
+contient toutes les directives de compilation d’un logiciel. Un Makefile définit un certain nombre de
+règles permettant de construire des cibles. Les cibles les plus communes étant install (pour la compilation
+et l’installation du logiciel) et clean (pour sa suppression).*
+
+*En suivant les consignes du fichier README.md, et en installant les éventuels paquets manquants, compilez
+ce programme et installez le en local.*
+
+*3. Malheureusement, cette installation “à la main” fait qu’on ne dispose pas des bénéfices de la gestion
+de paquets apportés par dpkg ou apt. Heureusement, il est possible de transformer un logiciel installé
+“à la main” en un paquet, et de le gérer ensuite avec apt ; c’est ce que permet par exemple l’outil
+checkinstall.*
+
+*4. Recommencez la compilation à l’aide de checkinstall :*
+ 
+```bash
+sudo checkinstall
+```
+*Un paquet a été créé (fichier xxx.deb), et le logiciel est à présent installé (tapez cbonsai depuis n’importe
+quel dossier pour vous en assurer) ; on peut vérifier par exemple avec aptitude qu’il provient bien du paquet
+qu’on a créé avec checkinstall.
+Vous pouvez à présent profiter d’un instant de zenitude avant de passer au dernier exercice.*
+
+</ol>
+
+<h1>Exercice 8. Création de dépôt personnalisé</h1>
 
 <ol>
  
 <li><h3>Ecrire une commande qui affiche “INSTALLÉ” ou “NON INSTALLÉ” selon le nom et le statut du package spécifié dans cette commande.<h3></li>
  
-</ol>
+```bash
+```
 
-<h1>Exercice 3</h1>
+```bash
+```
+
+```bash
+
+```
+</ol><h1>Exercice 3</h1>
 
 <ol>
  
