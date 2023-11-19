@@ -28,8 +28,10 @@ alias maj='apt upgrade'
 Nous avons entré les commandes suivantes :
 `sudo su` puis `maj` et nous avons remarqué que notre alias est bien pris en compte car le système va lancer une recherche de mise à jour*
 
-<li><h3>Créez ensuite 4 utilisateurs u1, u2, u3, u4 avec la commande useradd, en demandant la création de
-leur dossier personnel et avec bash pour shell
-</h3></li>
+<li><h3>Combien de paquets sont disponibles en téléchargement sur les dépôts Ubuntu ?</h3></li>
+
+<li><h3>Utilisez les commandes `dpkg` et `apt` pour compter de deux manières différentes le nombre de total de paquets installés sur la machine (ne pas hésiter à consulter le manuel !). Comment explique-t-on la (petite) différence de comptage ? Pourquoi ne peut-on pas utiliser directement le fichier dpkg.log ?</h3></li>
+
+<li><h3>Combien de paquets sont disponibles en téléchargement sur les dépôts Ubuntu ?</h3></li>
 
 </ol>
