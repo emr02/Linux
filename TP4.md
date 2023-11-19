@@ -138,3 +138,55 @@ from remote machines installé
 
 ```
 </ol>
+
+
+<h1>Exercice 4</h1>
+
+<ol>
+ 
+<li><h3>Lister les programmes livrés avec coreutils. En particulier, on remarque que l’un deux se nomme [. De quoi s’agit-il ?<h3></li>
+ 
+```bash
+dpkg -L coreutils
+```
+
+La commande `"[" `est la commande de test. Elle permet d'écrire des conditions dont ont peut voir les résultats à l'aide des opérateur `&&` et `||`
+
+</ol>
+
+<h1>Exercice 5</h1>
+
+<ol>
+ 
+<li><h3>Installez les paquets emacs et lynx à l’aide de la version graphique d’aptitude (et prenez deux minutes pour vous renseigner et tester ces paquets).<h3></li>
+ 
+*Pour installer le paquet `emacs`, via `aptitude`, il faut d'abord installer le paquet aptitude en luimême puis une fois sur aptitude on fait une recherche en tapant :` /emacs` puis il faut appuyer sur n pour passer aux autres pages afin de trouver le paquet nommé emacs seul, puis appuyer sur +
+pour accepter d'installer le paquet, puis appuyer deux fois sur g pour confirmer et lancer
+l'installation. Ensuite si l'on tape emacs puis entrer nous avons bien accès au programme emacs sur notre machine*
+
+</ol>
+
+<h1>Exercice 6</h1>
+
+<ol>
+ 
+<li><h3>Ecrire une commande qui affiche “INSTALLÉ” ou “NON INSTALLÉ” selon le nom et le statut du package spécifié dans cette commande.<h3></li>
+ 
+</ol>
+
+<h1>Exercice 3</h1>
+
+<ol>
+ 
+<li><h3>Ecrire une commande qui affiche “INSTALLÉ” ou “NON INSTALLÉ” selon le nom et le statut du package spécifié dans cette commande.<h3></li>
+ 
+```bash
+```
+
+```bash
+```
+
+```bash
+
+```
+</ol>
