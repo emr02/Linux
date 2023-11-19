@@ -396,5 +396,14 @@ affiche les droits des ficher et dossier courant:
 ll
 </code>
 
+<li><h3>Transcrivez les commandes suivantes de la notation classique à la notation octale ou vice-versa (vous pourrez vous aider de la commande stat pour valider vos réponses) :</h3></li>
+
+<code>
+  - chmod u=rx,g=wx,o=r fic `534`
+  - chmod uo+w,g-rx fic en sachant que les droits initiaux de fic sont r--r-x--- `501`
+  - chmod 653 fic en sachant que les droits initiaux de fic sont 711 `Hein ?`
+  - chmod u+x,g=w,o-r fic en sachant que les droits initiaux de fic sont r--r-x--- `520`
+ </code>
+ 
 </ol>
 
