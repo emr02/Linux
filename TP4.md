@@ -18,7 +18,7 @@ if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi
 ```
-*Nous avons donc créé le fichier <`.bash_aliases` , dont le contenu est ci-dessous :*
+*Nous avons donc créé le fichier `.bash_aliases` , dont le contenu est ci-dessous :*
 
 ```bash
 alias maj='apt upgrade'
