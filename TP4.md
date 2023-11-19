@@ -38,8 +38,8 @@ Nous avons entré les commandes suivantes :
 
 <li><h3>A quoi servent les paquets glances, tldr et hollywood ? Installez-les et testez-les.</h3></li>
 
-<b>Quels paquets proposent de jouer au sudoku ?</b>
+<li><h3>Quels paquets proposent de jouer au sudoku ?</h3></li>
 
-<li>N’installez pas le paquet gnome-sudoku ou ksudoku sous peine de devoir probablement réinstallervotre VM</li>
+<b>N’installez pas le paquet gnome-sudoku ou ksudoku sous peine de devoir probablement réinstallervotre VM</b>
 
 </ol>
