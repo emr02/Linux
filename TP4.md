@@ -44,13 +44,24 @@ La commande est la suivante pour dpkg: dpkg -l | wc -l
 Le résultat est : 563
 le wc -l permet de compter le nombre de ligne et comme un paquet est équivalent à une ligne
 on trouve le bon nombre de paquets
-La commande pour lister les paquets installés avec apt et les compter est la suivante : apt list --
-intstalled | wc -l
-La petite différence de comptage entre apt et dpkg s'explique il y a des lignes warning que le wc -l
-compte
+La commande pour lister les paquets installés avec apt et les compter est la suivante :
+apt list -- intstalled | wc -l
+La petite différence de comptage entre apt et dpkg s'explique il y a des lignes warning que le wc -l compte
 ```
 
 <li><h3>Utilisez le fichier /var/log/dpkg.log pour obtenir les 5 derniers paquets installés sur votre machine.</h3></li>
+
+```bash
+$ grep install /var/log/dpkg.log | tail -n 5
+
+Le résultat de la commande est le suivant :
+
+2020-04-01 08:52:09 status installed linux-image-5.3.0-45-generic:amd64 5.3.0-45.37
+2020-04-01 08:51:31 status installed initramfs-tools:all 0.133ubuntu10 2020-04-01 08:50:51
+status installed mime-support:all 3.63ubuntu1 2020-04-01 08:50:51 status installed libcbin:
+amd64 2.30-0ubuntu2.1 2020-04-01 08:50:51 status installed install-info:amd64 6.6.0.dfsg.1-
+2ubuntu2
+```
 
 <li><h3>Listez les derniers paquets qui ont été installés explicitement avec la commande apt install</h3></li>
 
