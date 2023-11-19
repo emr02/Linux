@@ -63,11 +63,23 @@ amd64 2.30-0ubuntu2.1 2020-04-01 08:50:51 status installed install-info:amd64 6.
 2ubuntu2
 ```
 
+*Cette commande va lister les 5 derniers paquets qui ont été installés, ce sont bien les 5 derniers car ils sont listés dans ce fichier : dpkg.log*
+
 <li><h3>Listez les derniers paquets qui ont été installés explicitement avec la commande apt install</h3></li>
 
+```bash
+[root]@ubuntu-/home/julien: grep "apt install" /var/log/apt/history.log
+Commandline: apt install ledernierpaquetsinstallé
+```
 <li><h3>A quoi servent les paquets glances, tldr et hollywood ? Installez-les et testez-les.</h3></li>
 
 <li><h3>Quels paquets proposent de jouer au sudoku ?</h3></li>
+
+```bash
+apt search sudoku
+
+Ci-dessus vont donc être listés tous les paquets utiles pour jouer au sudoku
+```
 
 <b>N’installez pas le paquet gnome-sudoku ou ksudoku sous peine de devoir probablement réinstallervotre VM</b>
 
