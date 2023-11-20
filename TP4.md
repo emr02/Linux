@@ -304,7 +304,7 @@ Féliciations ! Votre dépôt est désormais pris en compte ! ... Enfin, pas tou
 
 <li><h3>Signature du dépôt avec GPG<h3></li>
  
-<li><h4>GPG est la version GNU du protocole PGP (Pretty Good Privacy), qui permet d’échanger des données de manière sécurisée. Ce système repose sur la notion de clés de chiffrement asymétriques (une clé publique et une clé privée)<h4></li>
+<li>GPG est la version GNU du protocole PGP (Pretty Good Privacy), qui permet d’échanger des données de manière sécurisée. Ce système repose sur la notion de clés de chiffrement asymétriques (une clé publique et une clé privée)</li>
 
 *1. Commencez par créer une nouvelle paire de clés avec la commande*
 
