@@ -1,3 +1,9 @@
+# TP 1 - Bash (commandes et redirections)
+
+
+
+
+
 ```bash
 man 6 intro
 find /usr -name "passwd"
