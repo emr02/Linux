@@ -240,30 +240,97 @@ Vous pouvez à présent profiter d’un instant de zenitude avant de passer au d
 
 <ol>
  
-<li><h3>Ecrire une commande qui affiche “INSTALLÉ” ou “NON INSTALLÉ” selon le nom et le statut du package spécifié dans cette commande.<h3></li>
+<li><h3>Dans cet exercice, vous allez créer vos propres paquets et dépôts, ce qui vous permettra de gérer les programmes que vous écrivez comme s’ils provenaient de dépôts officiels.<h3></li>
+
+<li><h3>Création d’un paquet Debian avec dpkg-deb<h3></li>
+
+*1. Dans le dossier scripts créé lors du TP 2, créez un sous-dossier origine-commande où vous créerez un sous-dossier DEBIAN, ainsi que l’arborescence usr/local/bin où vous placerez le script écrit à l’exercice 2*
+
+*2. Dans le dossier DEBIAN, créez un fichier control avec les champs suivants :*
  
 ```bash
+Package: origine-commande #nom du paquet
+Version: 0.1 #numéro de version
+Maintainer: Foo Bar #votre nom
+Architecture: all #les architectures cibles de notre paquet (i386, amd64...)
+Description: Cherche l'origine d'une commande
+Section: utils #notre programme est un utilitaire
+Priority: optional #ce n'est pas un paquet indispendable
 ```
+*3. Revenez dans le dossier parent de origine-commande (normalement, c’est votre $HOME) et tapez la
+commande suivante pour construire le paquet :*
 
 ```bash
+dpkg-deb --build origine-commande
 ```
+
+*Félicitations ! Vous avez créé votre propre paquet !*
+
+<li><h3>Création du dépôt personnel avec reprepro<h3></li>
+
+*1. Dans votre dossier personnel, commencez par créer un dossier repo-cpe. Ce sera la racine de votre dépôt*
+*. Ajoutez-y deux sous-dossiers : conf (qui contiendra la configuration du dépôt) et packages (qui contiendra nos paquets)*
+*3. Dans conf, créez le fichier distributions suivant :*
 
 ```bash
-
+Origin: Un nom, une URL, ou tout texte expliquant la provenance du dépôt
+Label: Nom du dépôt
+Codename: Nom de code de la distribution cible (impish, jammy, kinetic...)
+Architectures: i386 amd64 #(architectures cibles)
+Components: universe #(correspond à notre cas)
+Description: Une description du dépôt
 ```
-</ol><h1>Exercice 3</h1>
 
-<ol>
+*4. Dans le dossier repo-cpe, générez l’arborescence du dépôt avec la commande*
+
+```bash
+reprepro -b . export
+```
+5. Copiez le paquet origine-commande.deb créé précédemment dans le dossier packages du dépôt, puis, à la racine du dépôt, exécutez la commande afin que votre paquet soit inscrit dans le dépôt.*
+
+```bash
+reprepro -b . includedeb nom_de_la_distribution origine-commande.deb
+```
+
+*6. Il faut à présent indiquer à apt qu’il existe un nouveau dépôt dans lequel il peut trouver des logiciels. Pour cela, créez (avec sudo) dans le dossier /etc/apt/sources.list.d le fichier repo-cpe.list contenant :*
+
+```bash
+deb file:/home/VOTRE_NOM/repo-cpe nom_de_la_distribution multiverse
+```
+
+*(cette ligne reprend la configuration du dépôt, elle est à adapter au besoin)*
+*7. Lancez la commande sudo apt update.
+Féliciations ! Votre dépôt est désormais pris en compte ! ... Enfin, pas tout à fait... Si vous regardez la sortie d’apt update, il est précidé que le dépôt ne peut être pris en compte car il n’est pas signé. La signature permet de vérifier qu’un paquet provient bien du bon dépôt.On doit donc signer notre dépôt.*
+
+<li><h3>Signature du dépôt avec GPG<h3></li>
  
-<li><h3>Ecrire une commande qui affiche “INSTALLÉ” ou “NON INSTALLÉ” selon le nom et le statut du package spécifié dans cette commande.<h3></li>
+<li><h4>GPG est la version GNU du protocole PGP (Pretty Good Privacy), qui permet d’échanger des données de manière sécurisée. Ce système repose sur la notion de clés de chiffrement asymétriques (une clé publique et une clé privée)<h4></li>
+
+*1. Commencez par créer une nouvelle paire de clés avec la commande*
+
+`gpg --gen-key`
+
+Attention ! N’oubliez pas votre passphrase !!!
+
+*2. Ajoutez à la configuration du dépôt (fichier distributions la ligne suivante :*
+
+`SignWith: yes`
+
+*3. Ajoutez la clé à votre dépôt :*
+
+`reprepro --ask-passphrase -b . export`
+
+Attention ! Cette méthode n’est pas sécurisée et obsolète ; dans un contexte professionnel, on utiliserait plutot un `gpg-agent`.
+
+*4. Ajoutez votre clé publique à votre dépôt avec la commande*
+
+`gpg --export -a "auteur" > public.key`
+
+*5. Enfin, ajoutez cette clé à la liste des clés fiables connues de apt :*
+
+`sudo apt-key add public.key`
+
+*Félicitations ! La configuration est (enfin) terminée ! Vérifiez que vous pouvez installer votre paquet comme n’importe quel autre paquet.*
  
-```bash
-```
-
-```bash
-```
-
-```bash
-
-```
 </ol>
+
