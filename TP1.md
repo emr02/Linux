@@ -1,6 +1,104 @@
 # TP 1 - Bash (commandes et redirections)
 
+<h1>Exercice 1. Navigation dans l’arborescence de fichiers</h1>
 
+<ol>
+  
+<li><h3><h3></li>
+
+```bash
+
+```
+
+</ol>
+
+<h1>Exercice 2. Obtenir un peu d’aide : le Manuel Linux</h1>
+
+<ol>
+  
+<li><h3><h3></li>
+
+```bash
+
+```
+
+</ol>
+<h1>Exercice 3. Traitement de fichiers texte</h1>
+
+<ol>
+  
+<li><h3><h3></li>
+
+```bash
+
+```
+
+</ol>
+<h1>Exercice 4. Redirections de flux d’entrées / sorties</h1>
+
+<ol>
+  
+<li><h3><h3></li>
+
+```bash
+
+```
+
+</ol>
+<h1>Exercice 5. Quelques autres commandes à connaître</h1>
+
+<ol>
+  
+<li><h3><h3></li>
+
+```bash
+
+```
+
+</ol>
+<h1>Exercice 6. Découverte de l’éditeur de texte nano</h1>
+
+<ol>
+  
+<li><h3><h3></li>
+
+```bash
+
+```
+
+</ol>
+<h1>Exercice 7. Personnalisation du shell (pour les plus rapides)</h1>
+
+<ol>
+  
+<li><h3><h3></li>
+
+```bash
+
+```
+
+
+</ol>
+<h1>Exercice 7. Personnalisation du shell (pour les plus rapides)</h1>
+
+<ol>
+  
+<li><h3><h3></li>
+
+```bash
+
+```
+
+</ol>
+<h1></h1>Exercice 8. AWK (pour les très rapides)<h3></li>
+
+<ol>
+
+```bash
+
+```
+
+</ol>
 
 
 
