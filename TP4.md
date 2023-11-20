@@ -299,12 +299,13 @@ deb file:/home/VOTRE_NOM/repo-cpe nom_de_la_distribution multiverse
 ```
 
 *(cette ligne reprend la configuration du dépôt, elle est à adapter au besoin)*
+
 *7. Lancez la commande sudo apt update.
 Féliciations ! Votre dépôt est désormais pris en compte ! ... Enfin, pas tout à fait... Si vous regardez la sortie d’apt update, il est précidé que le dépôt ne peut être pris en compte car il n’est pas signé. La signature permet de vérifier qu’un paquet provient bien du bon dépôt.On doit donc signer notre dépôt.*
 
 <li><h3>Signature du dépôt avec GPG<h3></li>
  
-<li>GPG est la version GNU du protocole PGP (Pretty Good Privacy), qui permet d’échanger des données de manière sécurisée. Ce système repose sur la notion de clés de chiffrement asymétriques (une clé publique et une clé privée)</li>
+<h4>GPG est la version GNU du protocole PGP (Pretty Good Privacy), qui permet d’échanger des données de manière sécurisée. Ce système repose sur la notion de clés de chiffrement asymétriques (une clé publique et une clé privée)</h4>
 
 *1. Commencez par créer une nouvelle paire de clés avec la commande*
 
