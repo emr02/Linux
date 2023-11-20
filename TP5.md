@@ -3,7 +3,7 @@
 <h1>Exercice 1. Disques et partitions</h1>
 
 <ol>
-<li><h3><h3></li
+<li><h3><h3></li>
 
 *En*
 
