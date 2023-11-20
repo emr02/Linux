@@ -66,17 +66,6 @@
 
 ```
 
-</ol>
-<h1>Exercice 7. Personnalisation du shell (pour les plus rapides)</h1>
-
-<ol>
-  
-<li><h3><h3></li>
-
-```bash
-
-```
-
 
 </ol>
 <h1>Exercice 7. Personnalisation du shell (pour les plus rapides)</h1>
@@ -90,7 +79,7 @@
 ```
 
 </ol>
-<h1></h1>Exercice 8. AWK (pour les très rapides)<h3></li>
+<h1>Exercice 8. AWK (pour les très rapides)</h1>
 
 <ol>
 
