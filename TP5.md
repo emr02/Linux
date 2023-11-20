@@ -7,25 +7,72 @@
 *1. Dans l’interface de configuration de votre VM, créez un second disque dur, de 5 Go dynamiquement
 alloués ; puis démarrez la VM*
 
+
+```bash
+créer disque
+```
+
 *2. Vérifiez que ce nouveau disque dur est bien détecté par le système*
 
-*3. Partitionnez ce disque en utilisant fdisk : créez une première partition de 2 Go de type Linux (n°83),
-et une seconde partition de 3 Go en NTFS (n°7)*
+
+```bash
+fdisk -l
+```
+
+```bash
+Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
+Disk model: Virtual disk
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+```
+
+*3. Partitionnez ce disque en utilisant fdisk : créez une première partition de 2 Go de type Linux (n°83), et une seconde partition de 3 Go en NTFS (n°7)*
+
+*Pour faire ceci, il faut utiliser la commande : fdisk /dev/"nom du disque" par exemple fdisk
+/dev/sdb Puis on suit les commandes et il ne faut pas oublier de faire w afin de sauvegarder les modifications
+Pour créer la partitions en NTFS ça se passe ainsi :*
+
+```bash
+fdisk /dev/sdb
+Commands:
+to create the partition: n, p, [enter], [enter]
+to give a type to the partition: t, 7 (don't select 86 or 87, those are for volume sets)
+if you want to make it bootable: a
+to see the changes: p
+to write the changes: w
+mkfs.ntfs -f /dev/sdb2
+mkdir /mnt/ntfsvolume
+mount /dev/sdb2 /mnt/ntfsvolume
+```
 
 *4. A ce stade, les partitions ont été créées, mais elles n’ont pas été formatées avec leur système de fichiers.
 A l’aide de la commande mkfs, formatez vos deux partitions (pensez à consulter le manuel !)*
 
-*. Pourquoi la commande df -T, qui affiche le type de système de fichier des partitions, ne fonctionne-telle
-pas sur notre disque ?*
+*La partition en NTFS a été formatée à la question précédente, pour ce qui est de celle qui est de type Linux il faut la faire de la manière suivante :
+`mkfs.ext4 /dev/sdb1`*
 
-*6. Faites en sorte que les deux partitions créées soient montées automatiquement au démarrage de la
-machine, respectivement dans les points de montage /data et /win (vous pourrez vous passer des
-UUID en raison de l’impossibilité d’effectuer des copier-coller)*
+*5. Pourquoi la commande df -T, qui affiche le type de système de fichier des partitions, ne fonctionne-telle pas sur notre disque ?*
+
+*La commande df -T ne fonctionne pas car nos partitions ne sont pas montées. Il faut absolument avoir un système de fichiers et que la partition / disque soit monté pour que cela fonctionne.*
+
+*6. Faites en sorte que les deux partitions créées soient montées automatiquement au démarrage de la machine, respectivement dans les points de montage /data et /win (vous pourrez vous passer des UUID en raison de l’impossibilité d’effectuer des copier-coller)*
+
+*Les commandes pour que les deux partitions soient montés sont :*
+
+```bash
+mkdir /data
+[09:52]-[root]@client-/home/julien: mkdir /win
+[09:52]-[root]@client-/home/julien: umount /dev/sdb2
+[09:52]-[root]@client-/home/julien: mount /dev/sdb2 /win
+[09:52]-[root]@client-/home/julien: mount /dev/sdb1 /data
+```
+
+*Pour que les fichiers soient montés automatiquement au démarrage : il faut modifier le fichier `/etc/fstab`*
 
 *7. Utilisez la commande mount puis redémarrez votre VM pour valider la configuration*
 
-*8. Créez un dossier partagé entre votre VM et votre système hôte (rem. il peut être nécessaire d’installer
-les Additions invité de VirtualBox).*
+*8. Créez un dossier partagé entre votre VM et votre système hôte (rem. il peut être nécessaire d’installer les Additions invité de VirtualBox).*
 
 *9. Optionnel : Montez une clé USB dans la VM*
 
