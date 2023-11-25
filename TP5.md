@@ -9,7 +9,16 @@ alloués ; puis démarrez la VM*
 
 
 ```bash
-créer disque
+
+    Ouvrez VirtualBox.
+    Sélectionnez la machine virtuelle que vous souhaitez configurer.
+    Cliquez sur le bouton Paramètres.
+    Dans l'onglet Stockage, cliquez sur le bouton Créer un nouveau disque dur.
+    Sélectionnez le type de disque dur VDI (VirtualBox Disk Image).
+    Sélectionnez le mode de création Dynamiquement alloué.
+    Dans le champ Taille, saisissez 5.
+    Cliquez sur le bouton Créer.
+
 ```
 
 *2. Vérifiez que ce nouveau disque dur est bien détecté par le système*
