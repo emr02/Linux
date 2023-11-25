@@ -12,7 +12,7 @@ alloués ; puis démarrez la VM*
 1. Ouvrez VirtualBox.
 2. Sélectionnez la machine virtuelle que vous souhaitez configurer.
 3. Cliquez sur le bouton Paramètres.
-4. Dans l'onglet Stockage, cliquez sur le bouton Créer un nouveau disque dur.
+4. Dans onglet Stockage, cliquez sur le bouton Créer un nouveau disque dur.
 5. Sélectionnez le type de disque dur VDI (VirtualBox Disk Image).
 6. Sélectionnez le mode de création Dynamiquement alloué.
 7. Dans le champ Taille, saisissez 5.
