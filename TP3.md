@@ -7,7 +7,7 @@
 
 *création d'utilisateur*
 
- >`sudo adduser antoine`
+ >`sudo adduser nom`
 
 *ajout groupe*
 
