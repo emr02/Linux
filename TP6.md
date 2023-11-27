@@ -206,9 +206,12 @@ $ named-checkzone 100.168.192.in-addr.arpa /etc/bind/db.192.168.100
 5. Redémarrer le serveur Bind9. Vous devriez maintenant être en mesure de ”pinguer” les différentes
 machines du réseau.
 
+### Optionnel
+
 ## Exercice 7. Installation d’un serveur web
 
 Installez et configurez un serveur web de votre choix (Apache ou nginx), et configurez le serveur pour
 qu’il réponde aussi au nom de www.
-Exercice 8. Installation d’un serveur de temps
+
+## Exercice 8. Installation d’un serveur de temps
 Installez et configurez un serveur de temps (paquet ntp).
