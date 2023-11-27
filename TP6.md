@@ -137,7 +137,9 @@ Vérifiez à présent que vous arrivez à « pinguer » une adresse IP (par exem
 A ce stade, le client a désormais accès à Internet, mais il sera difficile de surfer : par exemple, il est même
 impossible de pinguer www.google.com. C’est parce que nous n’avons pas encore configuré de serveur DNS
 pour le client.
-Exercice 5. Installation du serveur DNS
+
+## Exercice 5. Installation du serveur DNS
+
 De la même façon qu’il est plus facile de retenir le nom d’un contact plutôt que son numéro de téléphone,
 il est plus simple de mémoriser le nom d’un hôte sur un réseau (par exemple www.cpe.fr) plutôt que son
 adresse IP (178.237.111.223).
@@ -168,7 +170,9 @@ configuration du DHCP effectuée précédemment, puisque c’est grâce à elle 
 serveur DNS.
 4. Sur le client, installez le navigateur en mode texte lynx et essayez de surfer sur fr.wikipedia.org
 (bienvenue dans le passé...)
-Exercice 6. Configuration du serveur DNS pour la zone tpadmin.local
+
+## Exercice 6. Configuration du serveur DNS pour la zone tpadmin.local
+
 L’intérêt d’un serveur DNS privé est principalement de pouvoir résoudre les noms des machines du réseau
 local. Pour l’instant, il est impossible de pinguer client depuis serveur et inversement.
 1. Modifiez le fichier /etc/bind/named.conf.local et ajoutez les lignes suivantes :
@@ -201,7 +205,9 @@ $ named-checkzone tpadmin.local /etc/bind/db.tpadmin.local
 $ named-checkzone 100.168.192.in-addr.arpa /etc/bind/db.192.168.100
 5. Redémarrer le serveur Bind9. Vous devriez maintenant être en mesure de ”pinguer” les différentes
 machines du réseau.
-Exercice 7. Installation d’un serveur web
+
+## Exercice 7. Installation d’un serveur web
+
 Installez et configurez un serveur web de votre choix (Apache ou nginx), et configurez le serveur pour
 qu’il réponde aussi au nom de www.
 Exercice 8. Installation d’un serveur de temps
