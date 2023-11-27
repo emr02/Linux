@@ -75,12 +75,12 @@ encore configuré (en particulier, il n’a pas encore d’adresses IP à distri
 >nano /etc/netplan/50-cloud-init.yaml
 
 network :
-  version: 2
-    renderer : networkd
-      ethernets:
-        enp0s3 :
-          addresses :
-            − 192.168.100.1/24
+ version: 2
+  renderer : networkd
+   ethernets:
+    enp0s3 :
+     addresses :
+       − 192.168.100.1/24
 
 ```
 
