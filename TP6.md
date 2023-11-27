@@ -2,8 +2,7 @@
 
 ## Exercice 1. Adressage IP
 
-Vous administrez le réseau interne 172.16.0.0/23 d’une entreprise, et devez gérer un parc de 254 machines
-réparties en 7 sous-réseaux. La répar tition des machines est la suivante :
+Vous administrez le réseau interne 172.16.0.0/23 d’une entreprise, et devez gérer un parc de 254 machines réparties en 7 sous-réseaux. La répartition des machines est la suivante :
 - Sous-réseau 1 : 38 machines
 - Sous-réseau 2 : 33 machines
 - Sous-réseau 3 : 52 machines
