@@ -10,6 +10,7 @@ Vous administrez le réseau interne 172.16.0.0/23 d’une entreprise, et devez g
 - Sous-réseau 5 : 34 machines
 - Sous-réseau 6 : 37 machines
 - Sous-réseau 7 : 25 machines
+
 Donnez, pour chaque sous-réseau, l’adresse de sous-réseau, l’adresse de broadcast (multidiffusion) ainsi
 que les adresses de la première et dernière machine configurées (précisez si vous utilisez du VLSM ou pas).
 
