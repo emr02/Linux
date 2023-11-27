@@ -1,4 +1,4 @@
-# TP6
+# TP 6
 
 ## Exercice 1. Adressage IP
 
