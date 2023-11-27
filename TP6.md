@@ -56,6 +56,7 @@ script au démarrage. Nous ne nous en servirons pas et sa présence interfère a
 particulier le changement de nom d’hôte) ; par ailleurs, vos machines démarreront plus rapidement.
 Désinstallez complètement ce paquet (il faudra penser à le faire également sur le client
 ensuite.)
+
 4. Les deux machines serveur et client se trouveront sur le domaine tpadmin.local. A l’aide de la
 commande hostnamectl renommez le serveur (le changement doit persister après redémarrage,
 donc cherchez les bonnes options dans le manuel !). On peut afficher le nom et le domaine d’une
