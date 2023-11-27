@@ -141,10 +141,10 @@ DHCPACK. Vérifiez que le client reçoit bien une adresse IP de la plage spécif
 
 ```
 deny unknown-clients; #empêche l'attribution d'une adresse IP à une
-#station dont l'adresse MAC est inconnue du serveur
+                      #station dont l'adresse MAC est inconnue du serveur
 host client1 {
-hardware ethernet XX:XX:XX:XX:XX:XX; #remplacer par l'adresse MAC
-fixed-address 192.168.100.20;
+  hardware ethernet XX:XX:XX:XX:XX:XX; #remplacer par l'adresse MAC
+  fixed-address 192.168.100.20;
 }
 ```
 Vérifiez que la nouvelle configuration a bien été appliquée sur le client (éventuellement, désactivez
