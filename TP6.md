@@ -61,8 +61,8 @@ ensuite.)
 commande hostnamectl renommez le serveur (le changement doit persister après redémarrage,
 donc cherchez les bonnes options dans le manuel !). On peut afficher le nom et le domaine d’une
 machine avec les commandes hostname et/ou dnsdomainname ou en affichant le contenu du fichier/etc/hostname.
--> Il se peut que l’ancien nom persiste dans le fichier /etc/hosts, associé à l’adresse IP 127.0.1.1 ; si
-c’est le cas, modifiez ce fichier à la main.
+-> Il se peut que l’ancien nom persiste dans le fichier /etc/hosts, associé à l’adresse IP 127.0.1.1 ; si c’est le cas, modifiez ce fichier à la main.
+   
 -> ISC DHCP Server utilise le temps UTC, qui diffère de l’heure locale française. C’est pourquoi vous pourrez observer une différence entre la machine virtuelle et la machine hôte.
 
 ## Exercice 3. Installation du serveur DHCP
