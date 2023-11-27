@@ -138,12 +138,15 @@ DHCPACK. Vérifiez que le client reçoit bien une adresse IP de la plage spécif
 8. Que contient le fichier /var/lib/dhcp/dhcpd.leases sur le serveur, et qu’affiche la commande dhcp-lease-list ?
 9. Vérifiez que les deux machines se « voient » via leur adresse IP, à l’aide de la commande ping.
 10. Modifiez la configuration du serveur pour que l’interface réseau du client reçoive l’IP statique 192.168.100.20 :
+
+```
 deny unknown-clients; #empêche l'attribution d'une adresse IP à une
 #station dont l'adresse MAC est inconnue du serveur
 host client1 {
 hardware ethernet XX:XX:XX:XX:XX:XX; #remplacer par l'adresse MAC
 fixed-address 192.168.100.20;
 }
+```
 Vérifiez que la nouvelle configuration a bien été appliquée sur le client (éventuellement, désactivez
 puis réactivez l’interface réseau pour forcer le renouvellement du bail DHCP, ou utilisez la commande
 dhclient -v).
