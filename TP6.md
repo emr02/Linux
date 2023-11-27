@@ -206,7 +206,7 @@ $ named-checkzone 100.168.192.in-addr.arpa /etc/bind/db.192.168.100
 5. Redémarrer le serveur Bind9. Vous devriez maintenant être en mesure de ”pinguer” les différentes
 machines du réseau.
 
-### Optionnel
+## Optionnel
 
 ## Exercice 7. Installation d’un serveur web
 
