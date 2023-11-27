@@ -44,6 +44,10 @@ décrit ci-dessus
 2. Démarrez le serveur et vérifiez que les interfaces réseau sont bien présentes. A quoi correspond l’interface
 appelée lo ?
 
+```
+ip -4 a
+```
+
 Lo correspond à l'interface de loopback qui pointe vers la machine locale.
 
 ## Exercice 3. Installation du serveur DHCP
