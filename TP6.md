@@ -130,14 +130,14 @@ la ligne optional: true dans son fichier de configuration /etc/netplan/00-instal
 client. C’est parce que sudo utilise le fichier /etc/hosts qui contient l’ancien nom de la machine. Il
 faut modifier ce fichier à la main si vous rencontrer ce problème.
 
-8. La commande tail -f /var/log/syslog affiche de manière continue les dernières lignes du fichier
+7. La commande tail -f /var/log/syslog affiche de manière continue les dernières lignes du fichier
 de log du système (dès qu’une nouvelle ligne est écrite à la fin du fichier, elle est affichée à l’écran).
 Lancez cette commande sur le serveur, puis activez la carte réseau du client et observez les logs
 sur le serveur. Expliquez à quoi correspondent les messages DHCPDISCOVER, DHCPOFFER, DHCPREQUEST,
 DHCPACK. Vérifiez que le client reçoit bien une adresse IP de la plage spécifiée précédemment.
-9. Que contient le fichier /var/lib/dhcp/dhcpd.leases sur le serveur, et qu’afficle la commande dhcp-lease-list ?
-10. Vérifiez que les deux machines se « voient » via leur adresse IP, à l’aide de la commande ping.
-11. Modifiez la configuration du serveur pour que l’interface réseau du client reçoive l’IP statique 192.168.100.20 :
+8. Que contient le fichier /var/lib/dhcp/dhcpd.leases sur le serveur, et qu’affiche la commande dhcp-lease-list ?
+9. Vérifiez que les deux machines se « voient » via leur adresse IP, à l’aide de la commande ping.
+10. Modifiez la configuration du serveur pour que l’interface réseau du client reçoive l’IP statique 192.168.100.20 :
 deny unknown-clients; #empêche l'attribution d'une adresse IP à une
 #station dont l'adresse MAC est inconnue du serveur
 host client1 {
