@@ -71,7 +71,20 @@ encore configuré (en particulier, il n’a pas encore d’adresses IP à distri
 2. Un serveur DHCP a besoin d’une IP statique. Attribuez de manière permanente l’adresse IP 192.168.100.1
 à l’interface réseau du réseau interne. Vérifiez que la configuration est correcte.
 
-3. La configuration du serveur DHCP se fait via le fichier /etc/dhcp/dhcpd.conf. Renommez le fichier
+```
+>nano /etc/netplan/50-cloud-init.yaml
+
+network :
+  version: 2
+    renderer : networkd
+      ethernets:
+        enp0s3 :
+          addresses :
+            − 192.168.100.1/24
+
+```
+
+4. La configuration du serveur DHCP se fait via le fichier /etc/dhcp/dhcpd.conf. Renommez le fichier
 existant sous le nom dhcpd.conf.bak puis créez en un nouveau avec les informations suivantes :
 
 ```
