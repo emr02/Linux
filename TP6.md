@@ -84,7 +84,7 @@ network :
 
 ```
 
-4. La configuration du serveur DHCP se fait via le fichier /etc/dhcp/dhcpd.conf. Renommez le fichier
+3. La configuration du serveur DHCP se fait via le fichier /etc/dhcp/dhcpd.conf. Renommez le fichier
 existant sous le nom dhcpd.conf.bak puis créez en un nouveau avec les informations suivantes :
 
 ```
@@ -118,23 +118,26 @@ INTERFACESv6=""
 5. Validez votre fichier de configuration avec la commande dhcpd -t puis redémarrez le serveur DHCP
 (avec la commande systemctl restart isc-dhcp-server) et vérifiez qu’il est actif.
 
-6. Passons au client. Si vous avez suivi le sujet du TP 1, le client a été créé en clonant la machine virtuelle
-du serveur. Par conséquent, son nom d’hôte est toujours serveur. Nous allons remédier à cela.
-Pour l’instant, vérifiez que la carte réseau du client est désactivée, puis démarrez le client.
-Pour modifier le nom de la machine, saisissez la commande hostnamectl set-hostname client.
- Dans les versions récentes, Ubuntu installe d’office le paquet cloud-init lors de la configuration
-du système. Ce paquet permet la configuration de machines via un script dans le cloud, et a parfois des effets de bord fâcheux; en particulier, il supprimera le nom qu’on vient de donner à notre
-VM au prochain redémarrage pour lui redonner son ancien nom. Pour éviter cela, créez le fichier
-/etc/cloud/cloud.cfg.d/99_hostname.cfg dans lequel vous ajouterez simplement preserve_hostname:
-true.
-7. La commande tail -f /var/log/syslog affiche de manière continue les dernières lignes du fichier
+6. Notre serveur DHCP est configuré ! Passons désormais au client. Si vous avez suivi le sujet du TP 1,
+le client a été créé en clonant la machine virtuelle du serveur. Par conséquent, son nom d’hôte est
+toujours serveur. Vérifiez que la carte réseau du client est débranchée, puis démarrez le client (il
+est possible qu’il mette un certain temps à démarrer : ceci est dû à l’absence de connexion Internet).
+Comme pour le serveur, désinstallez ensuite cloud-init, puis modifiez le nom de la machine (elle doit
+s’appeler client.tpadmin.local).
+ Pour empêcher la latence au démarrage si une machine n’a pas de connexion Internet, on peut ajouter
+la ligne optional: true dans son fichier de configuration /etc/netplan/00-installer-config.yaml
+ Il est possible que les commandes sudo prennent désormais un certain temps à s’exécuter sur le
+client. C’est parce que sudo utilise le fichier /etc/hosts qui contient l’ancien nom de la machine. Il
+faut modifier ce fichier à la main si vous rencontrer ce problème.
+
+8. La commande tail -f /var/log/syslog affiche de manière continue les dernières lignes du fichier
 de log du système (dès qu’une nouvelle ligne est écrite à la fin du fichier, elle est affichée à l’écran).
 Lancez cette commande sur le serveur, puis activez la carte réseau du client et observez les logs
 sur le serveur. Expliquez à quoi correspondent les messages DHCPDISCOVER, DHCPOFFER, DHCPREQUEST,
 DHCPACK. Vérifiez que le client reçoit bien une adresse IP de la plage spécifiée précédemment.
-8. Que contient le fichier /var/lib/dhcp/dhcpd.leases sur le serveur, et qu’afficle la commande dhcp-lease-list ?
-9. Vérifiez que les deux machines se « voient » via leur adresse IP, à l’aide de la commande ping.
-10. Modifiez la configuration du serveur pour que l’interface réseau du client reçoive l’IP statique 192.168.100.20 :
+9. Que contient le fichier /var/lib/dhcp/dhcpd.leases sur le serveur, et qu’afficle la commande dhcp-lease-list ?
+10. Vérifiez que les deux machines se « voient » via leur adresse IP, à l’aide de la commande ping.
+11. Modifiez la configuration du serveur pour que l’interface réseau du client reçoive l’IP statique 192.168.100.20 :
 deny unknown-clients; #empêche l'attribution d'une adresse IP à une
 #station dont l'adresse MAC est inconnue du serveur
 host client1 {
