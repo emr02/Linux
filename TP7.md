@@ -10,7 +10,7 @@
 network:
    ethernets:
        enp0s3:
-           dhcp4: true
+           dhcp4: true  (il faut enp0s3 car il sert à se connecter à internet)
        enps08:
            dhcp4: false
            addresses:
