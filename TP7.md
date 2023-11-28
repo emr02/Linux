@@ -8,15 +8,14 @@
 >nano /etc/netplan/50-cloud-init.yaml
 
 network:
- version: 2
-  renderer: networkd
    ethernets:
-    enp0s3:
-     dhcp4: true
-    enps08:
-     dhcp4: false
-     addresses:
-       − 192.168.122.10/24
+       enp0s3:
+           dhcp4: true
+       enps08:
+           dhcp4: false
+           addresses:
+           − 192.168.122.10/24
+   version: 2
 
 puis faire sudo netplan try pour sauvergarder config
 
