@@ -31,3 +31,5 @@ $ sudo apt install software-properties-common
 $ sudo add-apt-repository --yes --update ppa:ansible/ansible
 $ sudo apt install ansible
 ```
+
+on vérifie avec ls -l a* que les fichiers ansible sont présent dans /usr/bin
