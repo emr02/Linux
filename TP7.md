@@ -3,6 +3,7 @@
 
 1. fichier - outils - network manager - ajouter nat neworks
    pour les machines virtuelles, configuration - reseaux - activer adapter2 - selectionner reseaux nat
+   
 ```
 >nano /etc/netplan/50-cloud-init.yaml
 
