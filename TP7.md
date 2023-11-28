@@ -106,4 +106,21 @@ Si tout va bien, vous devriez obtenir le résultat suivant :
          }
 
 ```
-9.
+9. Installez sur le node-manager le paquet python3-passlib, puis générez la version chiffrée
+du mot de passe du compte :
+
+```
+$ ansible localhost -i inventaire.ini -m debug -a "msg={{ 'mot de passe' |
+password_hash('sha512', 'secretsalt') }}"
+
+```
+10. Utilisez le mot de passé chiffré de la question précédente et le module user pour
+créer le nouvel utilisateur user-ansible sur les nodes (cherchez dans la documentation pour
+en savoir plus sur ce module !).
+ Les seuls arguments nécessaires du module user sont ici le nom et le mot de passe de notre nouvel
+utilisateur.
+Si tout s’est bien passé, vous devriez obtenir un message de couleur orange, qui indique qu’une modification
+a eu lieu sur les nodes. Notez également la ligne "password": "NOT_LOGGING_PASSWORD" : le mot de passe
+de l’utilisateur ne figurera pas dans les logs sur le node
+
+voir question 9 et mettre directement dans le code de la question 9. avec user à la place de debug et -a ... les arguments
