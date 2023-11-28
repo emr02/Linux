@@ -12,6 +12,9 @@ network:
   renderer: networkd
    ethernets:
     enp0s3:
+     dhcp4: true
+    enps08:
+     dhcp4: false
      addresses:
        − 192.168.122.10/24
 
