@@ -84,6 +84,8 @@ network:
      addresses:
        − 192.168.100.1/24
 
+puis faire sudo netplan try pour sauvergarder config
+
 ```
 
 3. La configuration du serveur DHCP se fait via le fichier /etc/dhcp/dhcpd.conf. Renommez le fichier
