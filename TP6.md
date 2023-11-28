@@ -45,7 +45,9 @@ décrit ci-dessus
 appelée lo ?
 
 ```
-ip -4 a
+pour lister toutes les interfaces:
+
+ip a
 ```
 
 Lo correspond à l'interface de loopback qui pointe vers la machine locale.
