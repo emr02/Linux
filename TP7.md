@@ -56,7 +56,7 @@ on vérifie avec ls -l a* que les fichiers ansible sont présent dans /usr/bin
 ```
 sudo add user-ansible
 ```
-6.Depuis le node manager, connectez-vous en SSH au compte admin de chaque node. Ceci permet d’enregistrer
+6. Depuis le node manager, connectez-vous en SSH au compte admin de chaque node. Ceci permet d’enregistrer
 sur le node manager l’empreinte SSH de chaque node, une étape indispensable pour pouvoir utiliser Ansible
 
 ```
@@ -82,3 +82,28 @@ http1
 [db]
 bdd1
 ```
+8. Commencez par lancer un ping sur les nodes à l’aide d’Ansible, avec la commande
+suivante :
+```
+remplacer tp par le nom de votre utilisateur capable d'executer sudo
+
+$ ansible -i inventaire.ini -m ping all -u tp --ask-pass
+
+Si tout va bien, vous devriez obtenir le résultat suivant :
+         http1 | SUCCESS => {
+            "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python3"
+            },
+            "changed": false,
+            "ping": "pong"
+         }
+         bdd1 | SUCCESS => {
+            "ansible_facts": {
+            "discovered_interpreter_python": "/usr/bin/python3"
+            },
+            "changed": false,
+            "ping": "pong"
+         }
+
+```
+9.
