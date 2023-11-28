@@ -20,3 +20,12 @@ puis faire sudo netplan try pour sauvergarder config
 On peut cloner la machine et config .11 .12 avec netplan
 
 ```
+
+2. Installer Ansible
+
+```
+$ sudo apt update
+$ sudo apt install software-properties-common
+$ sudo add-apt-repository --yes --update ppa:ansible/ansible
+$ sudo apt install ansible
+```
