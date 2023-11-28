@@ -5,7 +5,7 @@
    pour les machines virtuelles, configuration - reseaux - activer adapter2 - selectionner reseaux nat
    
 ```
->nano /etc/netplan/50-cloud-init.yaml
+$ nano /etc/netplan/50-cloud-init.yaml
 
 network:
    ethernets:
