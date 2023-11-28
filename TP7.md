@@ -22,7 +22,18 @@ puis faire sudo netplan try pour sauvergarder config
 On peut cloner la machine et config .11 .12 avec netplan
 
 ```
-3. Question 3. Test de la configuration
+2. Résolution des noms
+Pour que le node manager communique avec les serveurs par un nom plutôt que par une adresse IP, il fau-
+drait configurer un serveur DNS comme nous l’avons fait dans le TP 6. Cependant, il s’agit d’un processus
+assez long, et l’objet du présent TP étant Ansible, nous allons utiliser une méthode plus rapide.
+Ajoutez les deux entrées suivantes au fichier /etc/hosts :
+- 192.168.122.11 http1
+- 192.168.122.12 bdd1
+ Le fichier /etc/hosts est en quelques sortes l’ancêtre des serveurs DNS, à une époque où la résolution
+de noms se faisait à la main... Il est toujours utilisé, et est consulté avant de faire appel à un serveur DNS.
+Vous pouvez à présent créer deux clones de cette machine
+
+3. Test de la configuration
    - modifiez l’adresse IP et le fichier hosts de chaque serveur ;
    - renommez le serveur web en http1 et le serveur de base de données en bdd1 (reconnectez-vous
 pour que les modifications apparaissent) ;
