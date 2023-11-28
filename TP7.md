@@ -22,8 +22,14 @@ puis faire sudo netplan try pour sauvergarder config
 On peut cloner la machine et config .11 .12 avec netplan
 
 ```
+3. Question 3. Test de la configuration
+   - modifiez l’adresse IP et le fichier hosts de chaque serveur ;
+   - renommez le serveur web en http1 et le serveur de base de données en bdd1 (reconnectez-vous
+pour que les modifications apparaissent) ;
+   - Vérifiez que les trois machines arrivent à communiquer entre elles par leur nom et à aller
+sur Internet.
 
-2. Installer Ansible
+4. Installer Ansible
 
 ```
 $ sudo apt update
@@ -33,3 +39,35 @@ $ sudo apt install ansible
 ```
 
 on vérifie avec ls -l a* que les fichiers ansible sont présent dans /usr/bin
+
+5. creer utilsateur user-ansbile et l'ajouter à sudo
+
+```
+sudo add user-ansible
+```
+6.Depuis le node manager, connectez-vous en SSH au compte admin de chaque node. Ceci permet d’enregistrer
+sur le node manager l’empreinte SSH de chaque node, une étape indispensable pour pouvoir utiliser Ansible
+
+```
+$ su user-ansible  (changer utilisateur)
+$ ssh tp@http1
+$ exit
+$ ssh tp@bdd1
+$ exit
+
+sudo apt install sshpass (car pas installé)
+
+```
+7. Créez un dossier ansible dans /home/user-ansible sur le node manager, et créez votre fichier
+d’inventaire nommé inventaire.ini dans ce dossier. Le node http1 sera placé dans un groupe
+nommé apache et le node bdd1 sera placé dans un groupe nommé db.
+
+```
+Dans le fichier inventaire.ini :
+
+[apache]
+http1
+
+[db]
+bdd1
+```
