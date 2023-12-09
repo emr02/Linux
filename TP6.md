@@ -84,7 +84,7 @@ network:
      addresses:
        − 192.168.100.1/24
 
-puis faire sudo netplan try pour sauvergarder config
+puis faire sudo netplan apply pour sauvergarder config
 
 ```
 
