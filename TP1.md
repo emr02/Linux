@@ -103,4 +103,3 @@ cat -n big.txt | head -20 | tail -11
 grep "\w*a\w*a\w*" big.txt  (alnum mais en plus court)
 grep "\b\w*a\w*a\b" big.txt 
 ```
-![image](https://github.com/emree00/Linux/assets/46965753/8edc3d5f-9a02-436f-a991-811d5d9c961e)
