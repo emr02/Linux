@@ -17,7 +17,7 @@ network:
            − 192.168.122.10/24
    version: 2
 
-puis faire sudo netplan try pour sauvergarder config
+puis faire sudo netplan apply pour sauvergarder config
 
 On peut cloner la machine et config .11 .12 avec netplan
 
